@@ -1,0 +1,458 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="EnterAccountDetails" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:s2="clr-namespace:System;assembly=System" xmlns:s3="clr-namespace:Sterling_RPA_Custom_Activities;assembly=Sterling RPA Custom Activities" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sa1="clr-namespace:System.Activities;assembly=System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:sae="clr-namespace:System.Activities.Expressions;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sas="clr-namespace:System.Activities.Statements;assembly=System.Activities" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sc1="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sd2="clr-namespace:System.Diagnostics;assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sd3="clr-namespace:System.Drawing;assembly=System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" xmlns:si="clr-namespace:System.IO;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sx="clr-namespace:System.Xml;assembly=System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:uc="clr-namespace:UiPath.Core;assembly=UiPath.System.Activities" xmlns:uc1="clr-namespace:UiPath.Core;assembly=UiPath.UiAutomation.Activities" xmlns:uc2="clr-namespace:UiPath.Core;assembly=UiPath.System.Activities, Version=19.10.1.0, Culture=neutral, PublicKeyToken=null" xmlns:uca="clr-namespace:UiPath.Core.Activities;assembly=UiPath.System.Activities" xmlns:uca1="clr-namespace:UiPath.Core.Activities;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_AccountName" Type="InArgument(x:String)" />
+    <x:Property Name="in_AddressLine1" Type="InArgument(x:String)" />
+    <x:Property Name="in_City" Type="InArgument(x:String)" />
+    <x:Property Name="in_State" Type="InArgument(x:String)" />
+    <x:Property Name="in_ZipCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_Revenue" Type="InArgument(x:String)" />
+    <x:Property Name="in_AddressLine2" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Industry" Type="InArgument(x:String)" />
+    <x:Property Name="in_strType" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCountry" Type="InArgument(x:String)" />
+    <x:Property Name="in_strGetDataResidency" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>646,2146</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="626,2086" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584,1994" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Fill Account Details" sap:VirtualizedContainerService.HintSize="546,1745" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Account Name" EmptyField="True" sap:VirtualizedContainerService.HintSize="504,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[in_AccountName.Trim.ToString+&quot;[k(enter)]&quot;]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f32ff88-bd06-4159-85fb-ac0388381b76" InformativeScreenshot="bf4346a32c67cab106c59822c9086d33" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='tbCompany' /&gt;&lt;wnd aaname='Sales Primary:' cls='WindowsForms10.EDIT.*' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Address Line 1" sap:VirtualizedContainerService.HintSize="504,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[in_AddressLine1.Trim.ToString+&quot;[k(enter)]&quot;]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="488fe4fb-d84f-4a57-ba32-0a67327b236a" InformativeScreenshot="51fb1182761d236aa579cd9d516d12ee" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='tbAddress1' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Address Line 2" sap:VirtualizedContainerService.HintSize="504,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" Text="[in_AddressLine2.Trim.ToString+&quot;[k(enter)]&quot;]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="92be59f8-5572-41fc-b4ef-de3663ab0f91" InformativeScreenshot="51fb1182761d236aa579cd9d516d12ee" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='tbAddress2' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="City" sap:VirtualizedContainerService.HintSize="504,134" sap2010:WorkflowViewState.IdRef="TypeInto_11" Text="[in_City.Trim.ToString+&quot;[k(enter)]&quot;]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fbb4d29f-a37c-4519-941a-a92a07b1b9b6" InformativeScreenshot="51fb1182761d236aa579cd9d516d12ee" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='tbCity' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="State" sap:VirtualizedContainerService.HintSize="504,134" sap2010:WorkflowViewState.IdRef="TypeInto_12" Text="[in_State.Trim.ToString+&quot;[k(enter)]&quot;]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d22e914b-83e0-4771-8418-f258e089590d" InformativeScreenshot="51fb1182761d236aa579cd9d516d12ee" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='tbState' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Zip Code" sap:VirtualizedContainerService.HintSize="504,134" sap2010:WorkflowViewState.IdRef="TypeInto_13" Text="[in_ZipCode.Trim.ToString+&quot;[k(enter)]&quot;]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8890f5ff-8e84-48dd-a58f-371157b41b94" InformativeScreenshot="51fb1182761d236aa579cd9d516d12ee" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='tbZip*' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Revenue" sap:VirtualizedContainerService.HintSize="504,134" sap2010:WorkflowViewState.IdRef="TypeInto_14" Text="[in_Revenue.Trim.ToString+&quot;[k(enter)]&quot;]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6d796a2a-199a-4173-b6ae-5f5fb9c65963" InformativeScreenshot="51fb1182761d236aa579cd9d516d12ee" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='tbRevenue' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+          <If Condition="[in_strGetDataResidency.Trim.ToLower.Equals(&quot;emea&quot;)]" sap:VirtualizedContainerService.HintSize="504,282" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="United Kingdom">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Christmas Island</x:String>
+                    <x:String>Cayman Islands</x:String>
+                    <x:String>Cyprus</x:String>
+                    <x:String>Czechia</x:String>
+                    <x:String>Germany</x:String>
+                    <x:String>Djibouti</x:String>
+                    <x:String>Dominica</x:String>
+                    <x:String>Denmark</x:String>
+                    <x:String>Dominican Republic</x:String>
+                    <x:String>Algeria</x:String>
+                    <x:String>Ecuador</x:String>
+                    <x:String>Egypt</x:String>
+                    <x:String>Eritrea</x:String>
+                    <x:String>Western Sahara</x:String>
+                    <x:String>Spain</x:String>
+                    <x:String>Estonia</x:String>
+                    <x:String>Ethiopia</x:String>
+                    <x:String>Finland</x:String>
+                    <x:String>Fiji</x:String>
+                    <x:String>Falkland Islands (Malvinas)</x:String>
+                    <x:String>France</x:String>
+                    <x:String>Faroe Islands</x:String>
+                    <x:String>Micronesia, Federated States of</x:String>
+                    <x:String>Gabon</x:String>
+                    <x:String>United Kingdom</x:String>
+                    <x:String>Georgia</x:String>
+                    <x:String>Guernsey</x:String>
+                    <x:String>Ghana</x:String>
+                    <x:String>Gibraltar</x:String>
+                    <x:String>Guinea</x:String>
+                    <x:String>Guadeloupe</x:String>
+                    <x:String>Gambia</x:String>
+                    <x:String>Guinea-Bissau</x:String>
+                    <x:String>Equatorial Guinea</x:String>
+                    <x:String>Greece</x:String>
+                    <x:String>Grenada</x:String>
+                    <x:String>Greenland</x:String>
+                    <x:String>Guatemala</x:String>
+                    <x:String>French Guiana</x:String>
+                    <x:String>Guam</x:String>
+                    <x:String>Guyana</x:String>
+                    <x:String>Hong Kong</x:String>
+                    <x:String>Heard Island and McDonald Islands</x:String>
+                    <x:String>Honduras</x:String>
+                    <x:String>Croatia</x:String>
+                    <x:String>Haiti</x:String>
+                    <x:String>Hungary</x:String>
+                    <x:String>Indonesia</x:String>
+                    <x:String>Isle of Man</x:String>
+                    <x:String>India</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2c5889ee-6403-4d85-81d8-027696a1b19d" InformativeScreenshot="39cc215e0ac4be512ec8b70ea1d2dc6c" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='cbCountry' /&gt;&lt;ctrl role='combo box' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+            </If.Then>
+          </If>
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="504,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="401,491" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="cbType" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_strType.Trim]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="8">
+                      <x:String>Competitor</x:String>
+                      <x:String>Customer</x:String>
+                      <x:String>Investor</x:String>
+                      <x:String>Partner</x:String>
+                      <x:String>Press</x:String>
+                      <x:String>Prospect</x:String>
+                      <x:String>Reseller</x:String>
+                      <x:String>Vendor</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a391f54c-dff0-45b4-ba53-b78167f5c6a5" InformativeScreenshot="3f515fb555cf7e8ccf8ca252525db704" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='cbType' /&gt;&lt;ctrl name='View' role='combo box' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'Edit'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[in_Industry.Trim.ToString]">
+                  <ui:SetValue.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="99b47608-5064-4067-b322-b0542b13c966" InformativeScreenshot="961fd93a3c8a25a598eabfb754d00092" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='cbIndustry' /&gt;&lt;wnd cls='Edit' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:SetValue.Target>
+                </ui:SetValue>
+                <If Condition="[in_strCountry.Trim.tolower.Equals(&quot;us&quot;)]" sap:VirtualizedContainerService.HintSize="359,51" sap2010:WorkflowViewState.IdRef="If_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="United States">
+                      <ui:SelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="50">
+                          <x:String>United States</x:String>
+                          <x:String>Aruba</x:String>
+                          <x:String>Afghanistan</x:String>
+                          <x:String>Angola</x:String>
+                          <x:String>Anguilla</x:String>
+                          <x:String>Åland Islands</x:String>
+                          <x:String>Albania</x:String>
+                          <x:String>Andorra</x:String>
+                          <x:String>United Arab Emirates</x:String>
+                          <x:String>Argentina</x:String>
+                          <x:String>Armenia</x:String>
+                          <x:String>American Samoa</x:String>
+                          <x:String>Antarctica</x:String>
+                          <x:String>French Southern Territories</x:String>
+                          <x:String>Antigua and Barbuda</x:String>
+                          <x:String>Australia</x:String>
+                          <x:String>Austria</x:String>
+                          <x:String>Azerbaijan</x:String>
+                          <x:String>Burundi</x:String>
+                          <x:String>Belgium</x:String>
+                          <x:String>Benin</x:String>
+                          <x:String>Bonaire, Sint Eustatius and Saba</x:String>
+                          <x:String>Burkina Faso</x:String>
+                          <x:String>Bangladesh</x:String>
+                          <x:String>Bulgaria</x:String>
+                          <x:String>Bahrain</x:String>
+                          <x:String>Bahamas</x:String>
+                          <x:String>Bosnia and Herzegovina</x:String>
+                          <x:String>Saint Barthélemy</x:String>
+                          <x:String>Belarus</x:String>
+                          <x:String>Belize</x:String>
+                          <x:String>Bermuda</x:String>
+                          <x:String>Bolivia, Plurinational State of</x:String>
+                          <x:String>Brazil</x:String>
+                          <x:String>Barbados</x:String>
+                          <x:String>Brunei Darussalam</x:String>
+                          <x:String>Bhutan</x:String>
+                          <x:String>Bouvet Island</x:String>
+                          <x:String>Botswana</x:String>
+                          <x:String>Central African Republic</x:String>
+                          <x:String>Canada</x:String>
+                          <x:String>Cocos (Keeling) Islands</x:String>
+                          <x:String>Switzerland</x:String>
+                          <x:String>Chile</x:String>
+                          <x:String>China</x:String>
+                          <x:String>Côte d'Ivoire</x:String>
+                          <x:String>Cameroon</x:String>
+                          <x:String>Congo, The Democratic Republic of the</x:String>
+                          <x:String>Congo</x:String>
+                          <x:String>Cook Islands</x:String>
+                        </scg:List>
+                      </ui:SelectItem.Items>
+                      <ui:SelectItem.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="33907dd2-dea3-44fc-9357-c3e5b9bcbe6d" InformativeScreenshot="cc0036825dbf3bafc8a4c7c51ee94cd3" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' idx='1' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='cbCountry' /&gt;&lt;ctrl role='combo box' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SelectItem.Target>
+                    </ui:SelectItem>
+                  </If.Then>
+                  <If.Else>
+                    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'combo box'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[in_strCountry.Trim]">
+                      <ui:SelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="50">
+                          <x:String>United States</x:String>
+                          <x:String>Aruba</x:String>
+                          <x:String>Afghanistan</x:String>
+                          <x:String>Angola</x:String>
+                          <x:String>Anguilla</x:String>
+                          <x:String>Åland Islands</x:String>
+                          <x:String>Albania</x:String>
+                          <x:String>Andorra</x:String>
+                          <x:String>United Arab Emirates</x:String>
+                          <x:String>Argentina</x:String>
+                          <x:String>Armenia</x:String>
+                          <x:String>American Samoa</x:String>
+                          <x:String>Antarctica</x:String>
+                          <x:String>French Southern Territories</x:String>
+                          <x:String>Antigua and Barbuda</x:String>
+                          <x:String>Australia</x:String>
+                          <x:String>Austria</x:String>
+                          <x:String>Azerbaijan</x:String>
+                          <x:String>Burundi</x:String>
+                          <x:String>Belgium</x:String>
+                          <x:String>Benin</x:String>
+                          <x:String>Bonaire, Sint Eustatius and Saba</x:String>
+                          <x:String>Burkina Faso</x:String>
+                          <x:String>Bangladesh</x:String>
+                          <x:String>Bulgaria</x:String>
+                          <x:String>Bahrain</x:String>
+                          <x:String>Bahamas</x:String>
+                          <x:String>Bosnia and Herzegovina</x:String>
+                          <x:String>Saint Barthélemy</x:String>
+                          <x:String>Belarus</x:String>
+                          <x:String>Belize</x:String>
+                          <x:String>Bermuda</x:String>
+                          <x:String>Bolivia, Plurinational State of</x:String>
+                          <x:String>Brazil</x:String>
+                          <x:String>Barbados</x:String>
+                          <x:String>Brunei Darussalam</x:String>
+                          <x:String>Bhutan</x:String>
+                          <x:String>Bouvet Island</x:String>
+                          <x:String>Botswana</x:String>
+                          <x:String>Central African Republic</x:String>
+                          <x:String>Canada</x:String>
+                          <x:String>Cocos (Keeling) Islands</x:String>
+                          <x:String>Switzerland</x:String>
+                          <x:String>Chile</x:String>
+                          <x:String>China</x:String>
+                          <x:String>Côte d'Ivoire</x:String>
+                          <x:String>Cameroon</x:String>
+                          <x:String>Congo, The Democratic Republic of the</x:String>
+                          <x:String>Congo</x:String>
+                          <x:String>Cook Islands</x:String>
+                        </scg:List>
+                      </ui:SelectItem.Items>
+                      <ui:SelectItem.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="33907dd2-dea3-44fc-9357-c3e5b9bcbe6d" InformativeScreenshot="cc0036825dbf3bafc8a4c7c51ee94cd3" Selector="&lt;wnd app='*adminclient*.exe' ctrlname='frmMain' /&gt;&lt;wnd ctrlname='frmActEdit' idx='1' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel' /&gt;&lt;wnd ctrlname='frmActEdit_Fill_Panel_Fill_Panel' /&gt;&lt;wnd ctrlname='pnlActEditor' /&gt;&lt;wnd ctrlname='cbCountry' /&gt;&lt;ctrl role='combo box' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SelectItem.Target>
+                    </ui:SelectItem>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <s3:LogMessage Logs="{x:Null}" DisplayName="Log message" sap:VirtualizedContainerService.HintSize="504,22" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[in_AccountName+&quot; - Account level details entered&quot;]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s1:Exception" sap:VirtualizedContainerService.HintSize="550,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s1:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s1:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="550,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

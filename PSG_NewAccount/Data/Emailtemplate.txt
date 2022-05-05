@@ -1,0 +1,17 @@
+﻿<html>
+<body>
+<p>
+Hi Team,<br/>
+<br/>
+Account is created in SD with below Parent Admin User details<br/>
+
+<br/>
+
+Account ID - {0}<br/>
+Account Name - {1}<br/>
+
+<br/><br/>Below users are created - 
+
+
+
+

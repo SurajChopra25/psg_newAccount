@@ -1,0 +1,184 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Chrome" Type="InArgument(x:Boolean)" />
+    <x:Property Name="MozillaFirefox" Type="InArgument(x:Boolean)" />
+    <x:Property Name="InternetExplorer" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>663,2739</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Configuration.Install</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Delete Browser History, Cache and Cookies" sap:VirtualizedContainerService.HintSize="643,2679" sap2010:WorkflowViewState.IdRef="Sequence_18">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Path" />
+      <Variable x:TypeArguments="x:String" Name="batchFilesFolderPath" />
+      <Variable x:TypeArguments="x:String" Name="deletedDataLog" />
+      <Variable x:TypeArguments="s:String[]" Name="outputLog" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch sap2010:Annotation.AnnotationText="Description : It will help you to delete History, Cache and Cookies from Internet Explorer, Chrome and Firefox along with all the saved usernames and passwords.&#xA;Execution : You need to set the Argument as &quot;True&quot; for browsers whose History, Cache and Cookies needs to be deleted. The History, Cache and Cookies  will be deleted for the ones that have the input as &quot;True&quot; and an Output file will be generated in Output Folder containing the log message." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="601,2587" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Delete Browser History, Cache and Cookies" sap:VirtualizedContainerService.HintSize="563,2273" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="LogStatus" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:KillProcess Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process - Chrome" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="KillProcess_13" ProcessName="chrome" />
+          <Assign DisplayName="Assign Current Directory path" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Path]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Environment.CurrentDirectory]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign BatchFiles Folder Path" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[batchFilesFolderPath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Path+"\Batch Files"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create BatchFiles Folder" sap:VirtualizedContainerService.HintSize="521,84" sap2010:WorkflowViewState.IdRef="CreateDirectory_8" Path="[batchFilesFolderPath]" />
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Array.ForEach(Directory.GetFiles(BatchFilesFolderPath),Sub(x) File.Delete(x))" DisplayName="Invoke code to delete all files in BatchFiles Folder" sap:VirtualizedContainerService.HintSize="521,164" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="BatchFilesFolderPath">[batchFilesFolderPath]</InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <If Condition="[Chrome = True]" sap:VirtualizedContainerService.HintSize="521,499" sap2010:WorkflowViewState.IdRef="If_4">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,351" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:WriteTextFile DisplayName="Write Batch File - Chrome " FileName="[batchFilesFolderPath+&quot;\ChromeData.bat&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_20" Text="[&quot;@echo off&quot;+Environment.NewLine+&#xA;&quot;Set ChromeCache=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache&quot;+Environment.NewLine+&#xA;&quot;del /q /s /f &quot;&quot;%ChromeCache%&quot;&quot;&quot;+Environment.NewLine+&#xA;&quot;rd /s /q &quot;&quot;%ChromeCache%&quot;&quot;&quot;+Environment.NewLine+&#xA;&quot;Set ChromeHistory=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\History&quot;+Environment.NewLine+&#xA;&quot;del /q /s /f &quot;&quot;%ChromeHistory%&quot;&quot;&quot;+Environment.NewLine+&#xA;&quot;rd /s /q &quot;&quot;%ChromeHistory%&quot;&quot;&quot;+Environment.NewLine+&#xA;&quot;Set ChromeCookies=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cookies&quot;+Environment.NewLine+&#xA;&quot;del /q /s /f &quot;&quot;%ChromeCookies%&quot;&quot;&quot;+Environment.NewLine+&#xA;&quot;rd /s /q &quot;&quot;%ChromeCookies%&quot;&quot;&quot;+Environment.NewLine+&#xA;&quot;Set ChromePassword=C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Login data&quot;+Environment.NewLine+&#xA;&quot;del /q /s /f &quot;&quot;%ChromePassword%&quot;&quot;&quot;+Environment.NewLine+&#xA;&quot;rd /s /q &quot;&quot;%ChromePassword%&quot;&quot;&quot;]" />
+                <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Deletion Process - Chrome" FileName="[batchFilesFolderPath+&quot;\ChromeData.bat&quot;]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_13" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="&#x9;{&#xA;                string Log = &quot;&quot;;&#xA;&#x9;&#x9;        if(Chrome == true)&#xA;                {&#xA;                    //CheckChromeDataDeleted&#xA;                    string cachePath = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cache&quot;;&#xA;                    string cookiesPath = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Cookies&quot;;&#xA;                    string HistoryPath = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History&quot;;&#xA;                    string PasswordPath = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login data&quot;;&#xA;                    if ((!Directory.Exists(cachePath)) || (!File.Exists(cookiesPath)) || (!File.Exists(HistoryPath)) || (!File.Exists(PasswordPath)))&#xA;                    {&#xA;                        Log = &quot;Chrome Cache,Cookies and History Deleted Successfully.&quot;;&#xA;                    }&#xA;                    else&#xA;                    {&#xA;                        Log = &quot;Chrome Cache,Cookies and History is not Deleted.&quot;;&#xA;                    }&#xA;                }&#xA;&#x9;&#x9;&#x9;&#x9;if(MozillaFirefox == true)&#xA;                {&#xA;                    //CheckFireFoxDataDeleted&#xA;                    if (!Directory.Exists(&quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Mozilla\\Firefox\\Profiles&quot;))&#xA;                    {&#xA;                        Log = Log + &quot;Mozilla FireFox Cache,Cookies and History Deleted Successfully.&quot;;&#xA;                    }&#xA;                    else&#xA;                    {&#xA;                        Log = Log + &quot;Mozilla FireFox Cache,Cookies and History is not Deleted.&quot;;&#xA;                    }&#xA;                }&#xA;&#x9;&#x9;&#x9;&#x9;if(InternetExplorer == true)&#xA;                {&#xA;                    //CheckIEDataDeleted&#xA;                    string dirPath1 = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Microsoft\\Internet Explorer\\DomainSuggestions&quot;;&#xA;                    string dirPath2 = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Microsoft\\Internet Explorer\\imagestore&quot;;&#xA;                    string dirPath3 = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Microsoft\\Internet Explorer\\Recovery&quot;;&#xA;                    string dirPath4 = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Microsoft\\Internet Explorer\\TabRoaming&quot;;&#xA;                    string dirPath5 = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Microsoft\\Internet Explorer\\Tracking Protection&quot;;&#xA;                    string dirPath6 = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Microsoft\\Internet Explorer\\UrlBlock&quot;;&#xA;                    string dirPathHistory = &quot;C:\\Users\\&quot; + Environment.UserName + &quot;\\AppData\\Local\\Microsoft\\Windows\\History&quot;;&#xA;&#xA;                    if ((!Directory.Exists(dirPath1)) &amp;&amp; (!Directory.Exists(dirPath2)) &amp;&amp; (!Directory.Exists(dirPath3)) &amp;&amp; (!Directory.Exists(dirPath4)) &amp;&amp; (!Directory.Exists(dirPath5)) &amp;&amp; (!Directory.Exists(dirPath5)) || (!Directory.Exists(dirPathHistory)))&#xA;                    {&#xA;                        Log = Log + &quot;Internet Explorer Cache,Cookies and History Deleted Successfully.&quot;;&#xA;                    }&#xA;                    else&#xA;                    {&#xA;                        Log = Log + &quot;Internet Explorer Cache,Cookies and History is not Deleted.&quot;;&#xA;                    }&#xA;                }    &#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;if(Log.Length&gt;0)&#xA;&#x9;&#x9;&#x9;&#x9;{&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;LogStatus = Log;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;LogStatus = &quot;No Browser is Selected.&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;            }&#xA;" DisplayName="Check for Deleted Browser History, Cache and Cookies" sap:VirtualizedContainerService.HintSize="521,164" sap2010:WorkflowViewState.IdRef="InvokeCode_8" Language="CSharp">
+            <ui:InvokeCode.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="LogStatus">[LogStatus]</OutArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="Chrome">[Chrome]</InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="MozillaFirefox">[MozillaFirefox]</InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="InternetExplorer">[InternetExplorer]</InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[outputLog]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Split(LogStatus.tostring,“.”)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Output Folder" sap:VirtualizedContainerService.HintSize="521,84" sap2010:WorkflowViewState.IdRef="CreateDirectory_9" Path="[Path+&quot;\Output Folder&quot;]" />
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Array.ForEach(Directory.GetFiles(OutputFolderPath),Sub(x) File.Delete(x))" DisplayName="Invoke code to delete all files in Output Folder" sap:VirtualizedContainerService.HintSize="521,164" sap2010:WorkflowViewState.IdRef="InvokeCode_9">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="OutputFolderPath">[Path+"\Output Folder"]</InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="521,358" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[outputLog]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="x:String">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,224" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:AppendLine DisplayName="Append Line" FileName="[Path+&quot;\Output Folder\Output.txt&quot;]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[item]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="567,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="si:IOException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+            </ActivityAction.Argument>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[exception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
